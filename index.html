@@ -5,10 +5,22 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>OPR</title>
-		<link rel="stylesheet" href="main.css" />
+		<!-- <link rel="stylesheet" href="main.css" /> -->
 	</head>
 	<body>
 		<h1>Отдел перспективных разработок</h1>
+		<div class="calc_wire">
+			<div class="wire">
+				<input type="number" name="wireS" id="wireS" step="any" />
+				<label for="wireS">Введите площадь сечения в мм2</label>
+			</div>
+			<div class="wire">
+				<input type="number" name="wireD" id="wireD" step="any" disabled />
+				<label for="wireD">Диаметр провода в мм</label>
+			</div>
+			<button id="calcWireD">Вычислить</button>
+		</div>
+
 		<script src="js/main.js"></script>
 	</body>
 </html>
