@@ -1,0 +1,9 @@
+body {
+  background-color: aqua;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=main.css.map */

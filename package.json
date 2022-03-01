@@ -1,0 +1,22 @@
+{
+  "name": "opr_calc",
+  "version": "1.0.0",
+  "description": "Расчеты отдела перспективных технологий",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexeiromanov41/OPR_calc.git"
+  },
+  "keywords": [
+    "opr"
+  ],
+  "author": "RAS41",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexeiromanov41/OPR_calc/issues"
+  },
+  "homepage": "https://github.com/alexeiromanov41/OPR_calc#readme"
+}
