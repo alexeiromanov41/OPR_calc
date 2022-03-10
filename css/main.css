@@ -15,6 +15,14 @@ body {
   height: 50px;
 }
 
+.header .container {
+  background-color: #1d60c6;
+}
+
+.header .container h1 {
+  text-transform: uppercase;
+}
+
 .main {
   min-height: calc(100vh - 100px);
 }
@@ -25,14 +33,18 @@ body {
 
 .footer {
   height: 50px;
-  line-height: 50px;
+}
+
+.footer .container {
+  background-color: #393939;
+  color: white;
 }
 
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 36px;
-  line-height: 50px;
+  line-height: 40px;
   text-align: center;
   letter-spacing: 2px;
 }
@@ -57,7 +69,12 @@ h3 {
   border-color: #33d7f5;
   border-width: 2px;
   padding: 5px;
-  max-width: 320px;
+  width: 320px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .calculator h3 {
@@ -89,5 +106,21 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.parCalc {
+  margin-bottom: 5px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.developer__link {
+  text-decoration: none;
+  line-height: 30px;
+  color: antiquewhite;
+}
+
+.kpdUPS {
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=main.css.map */
