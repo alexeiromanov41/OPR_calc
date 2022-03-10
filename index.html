@@ -26,12 +26,12 @@
 				<section class="section_calc">
 					<div class="calc_wire calculator">
 						<h3>Вычисление диаметра провода по сечению</h3>
-						<div class="wire">
+						<div class="calcPair">
 							<input type="number" name="wireS" id="wireS" step="0.1" />
 							<label for="wireS">Введите площадь сечения в мм2</label>
 						</div>
 						<hr />
-						<div class="wire">
+						<div class="calcPair">
 							<input
 								type="number"
 								name="wireD"
@@ -47,27 +47,27 @@
 					<div class="calc_akb calculator">
 						<h3>Расчет емкости АКБ</h3>
 						<p class="parCalc">Исходные данные:</p>
-						<div class="cAKB">
+						<div class="calcPair">
 							<input type="number" name="u1AKB" id="u1AKB" step="1" />
 							<label for="u1AKB">U акб, В</label>
 						</div>
-						<div class="cAKB">
+						<div class="calcPair">
 							<input type="number" name="nAKBG" id="nAKBG" step="1" />
 							<label for="nAKBG">Количество АКБ в группе</label>
 						</div>
-						<div class="cAKB">
+						<div class="calcPair">
 							<input type="number" name="nGroup" id="nGroup" step="1" />
 							<label for="nGroup">Количество групп</label>
 						</div>
-						<div class="cAKB">
+						<div class="calcPair">
 							<input type="number" name="powerD" id="powerD" step="1" />
 							<label for="powerD">Мощность разряда, Вт</label>
 						</div>
-						<div class="cAKB">
+						<div class="calcPair">
 							<input type="number" name="timeD" id="timeD" step="1" />
 							<label for="timeD">Время разряда, мин.</label>
 						</div>
-						<div class="cAKB">
+						<div class="calcPair">
 							<select name="kpdUPS" id="kpdUPS" class="kpdUPS">
 								<option value="0.85">0,85 для ИБП менее 3500 ВА</option>
 								<option value="0.9">0,9 для ИБП более 3500 ВА</option>
@@ -76,7 +76,7 @@
 							<label for="kpdUPS">КПД ИБП при работе от батарей</label>
 						</div>
 						<hr />
-						<div class="cAKB">
+						<div class="calcPair">
 							<input type="number" name="CAKB" id="CAKB" step="any" disabled />
 							<label for="CAKB">Расчетная емкость АКБ, А*ч</label>
 							<p>*емкость АКБ рекомендуется выбирать с запасом 10...30 %</p>

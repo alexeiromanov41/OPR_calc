@@ -129,4 +129,12 @@ h3 {
   height: 34px;
   margin: 0 auto;
 }
+
+.calcPair {
+  margin-bottom: 20px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+  border-color: #39393946;
+}
 /*# sourceMappingURL=main.css.map */
