@@ -122,4 +122,11 @@ h3 {
 .kpdUPS {
   margin-bottom: 5px;
 }
+
+.butCalc {
+  display: block;
+  width: 180px;
+  height: 34px;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=main.css.map */

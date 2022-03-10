@@ -41,14 +41,15 @@
 							/>
 							<label for="wireD">Диаметр провода в мм</label>
 						</div>
-						<button id="calcWireD">Вычислить</button>
+						<hr />
+						<button id="calcWireD" class="butCalc">Вычислить</button>
 					</div>
 					<div class="calc_akb calculator">
 						<h3>Расчет емкости АКБ</h3>
 						<p class="parCalc">Исходные данные:</p>
 						<div class="cAKB">
 							<input type="number" name="u1AKB" id="u1AKB" step="1" />
-							<label for="u1AKB">U акб</label>
+							<label for="u1AKB">U акб, В</label>
 						</div>
 						<div class="cAKB">
 							<input type="number" name="nAKBG" id="nAKBG" step="1" />
@@ -60,11 +61,11 @@
 						</div>
 						<div class="cAKB">
 							<input type="number" name="powerD" id="powerD" step="1" />
-							<label for="powerD">Мощность разряда</label>
+							<label for="powerD">Мощность разряда, Вт</label>
 						</div>
 						<div class="cAKB">
 							<input type="number" name="timeD" id="timeD" step="1" />
-							<label for="timeD">Время разряда</label>
+							<label for="timeD">Время разряда, мин.</label>
 						</div>
 						<div class="cAKB">
 							<select name="kpdUPS" id="kpdUPS" class="kpdUPS">
@@ -77,9 +78,11 @@
 						<hr />
 						<div class="cAKB">
 							<input type="number" name="CAKB" id="CAKB" step="any" disabled />
-							<label for="CAKB">Номинальная емкость АКБ</label>
+							<label for="CAKB">Расчетная емкость АКБ, А*ч</label>
+							<p>*емкость АКБ рекомендуется выбирать с запасом 10...30 %</p>
 						</div>
-						<button id="calcCAKB">Вычислить</button>
+						<hr />
+						<button id="calcCAKB" class="butCalc">Вычислить</button>
 					</div>
 				</section>
 			</div>
