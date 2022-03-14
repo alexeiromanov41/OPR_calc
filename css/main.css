@@ -15,12 +15,14 @@ body {
   height: 50px;
 }
 
-.header .container {
-  background-color: #1d60c6;
-}
-
-.header .container h1 {
-  text-transform: uppercase;
+.header .header__container {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  background-image: url(../img/OPR.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .main {

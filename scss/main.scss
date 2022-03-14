@@ -8,11 +8,14 @@ body {
 .header {
 	height: 50px;
 	// background-color: aquamarine;
-	.container {
-		background-color: #1d60c6;
-		h1 {
-			text-transform: uppercase;
-		}
+	.header__container {
+		max-width: 1200px;
+		height: 100%;
+		margin: auto;
+		background-image: url(../img/OPR.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
 	}
 }
 .main {
@@ -51,6 +54,7 @@ h3 {
 	background-color: azure;
 	padding: 5px;
 }
+
 .calculator {
 	border-radius: 5px;
 	border-style: solid;
