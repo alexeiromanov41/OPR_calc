@@ -33,12 +33,13 @@ body {
 		color: white;
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 	.footer__left {
-		width: 50%;
+		width: max-content;
 	}
 	.footer__right {
-		width: 50%;
+		width: max-content;
 	}
 }
 h1 {
