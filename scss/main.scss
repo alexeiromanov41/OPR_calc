@@ -8,14 +8,13 @@ body {
 .header {
 	height: 50px;
 	// background-color: aquamarine;
-	.header__container {
-		max-width: 1200px;
+	.container {
 		height: 100%;
-		margin: auto;
 		background-image: url(../img/OPR.png);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: contain;
+		background-color: #3a3939be;
 	}
 }
 .main {
