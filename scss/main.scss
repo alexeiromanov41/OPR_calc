@@ -10,11 +10,12 @@ body {
 	// background-color: aquamarine;
 	.container {
 		height: 100%;
+		width: 90%;
 		background-image: url(../img/OPR.png);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: contain;
-		background-color: #3a3939be;
+		background-color: #3a393913;
 	}
 }
 .main {
@@ -138,4 +139,16 @@ h3 {
 .app_link {
 	text-decoration: none;
 	color: aliceblue;
+}
+
+@media screen and (max-width: 689px) {
+	.footer {
+		.container {
+			flex-direction: column;
+		}
+	}
+	.footer_right {
+		align-items: center;
+		width: 100%;
+	}
 }
