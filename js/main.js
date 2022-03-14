@@ -105,35 +105,34 @@ calcCAKB.addEventListener('click', () => {
 			},
 		];
 
-		for (let index = 0; index < tableK.length; index++) {
-			const element = tableK[index];
-			if (element.timeK == t) {
-				kEfCalc = element.koef;
-				break;
-			} else if (element.timeK > t) {
-				kEfCalc = 0.01;
-				break;
-			} else {
-				kEfCalc = 1;
-				break;
+		if (t >= 5) {
+			for (let index = 0; index < tableK.length; index++) {
+				const element = tableK[index];
+				if (element.timeK == t) {
+					kEfCalc = element.koef;
+					break;
+				} else if (element.timeK > t) {
+					let i1 = index;
+					let i0 = i1--;
+					let kPr = (
+						(tableK[i1].koef - tableK[i0].koef) /
+						(tableK[i1].timeK - tableK[i0].timeK)
+					).toFixed(10);
+					let kB = (tableK[i1].koef - kPr * tableK[i1].timeK).toFixed(10);
+					kEfCalc = (parseFloat(kPr * t) + parseFloat(kB)).toFixed(4);
+					break;
+				} else if (index == tableK.length - 1 && kEfCalc == undefined) {
+					kEfCalc = 1;
+					break;
+				}
 			}
 		}
 
-		// tableK.forEach((element, index) => {
-		// 	if (element.timeK == t) {
-		// 		console.log(index);
-		// 		return (kEfCalc = element.koef);
-		// 	} else if (element.timeK > t) {
-		// 		return (kEfCalc = 0.01);
-		// 	} else {
-		// 		return (kEfCalc = 1);
-		// 	}
-		// });
 		return kEfCalc;
 	};
 
 	let kEf = getK();
-	console.log(kEf);
+	console.log('Kef = ' + kEf);
 
 	if (u1 < 2 || n < 1 || nG < 1 || power < 1 || t < 5 || kpd < 0.85) {
 		alert('Недопустимое значение');
