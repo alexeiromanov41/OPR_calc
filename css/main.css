@@ -39,6 +39,20 @@ body {
 .footer .container {
   background-color: #393939;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer .footer__left {
+  width: 50%;
+}
+
+.footer .footer__right {
+  width: 50%;
 }
 
 h1 {
@@ -137,5 +151,34 @@ h3 {
   border-width: 1px;
   padding: 5px;
   border-color: #39393946;
+}
+
+.footer_right {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aplic_link {
+  width: 50%;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 2px;
+  width: 100px;
+  margin-right: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.app_link {
+  text-decoration: none;
+  color: aliceblue;
 }
 /*# sourceMappingURL=main.css.map */

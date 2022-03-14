@@ -31,6 +31,14 @@ body {
 	.container {
 		background-color: #393939;
 		color: white;
+		display: flex;
+		justify-content: space-between;
+	}
+	.footer__left {
+		width: 50%;
+	}
+	.footer__right {
+		width: 50%;
 	}
 }
 h1 {
@@ -108,4 +116,25 @@ h3 {
 	border-width: 1px;
 	padding: 5px;
 	border-color: #39393946;
+}
+
+.footer_right {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.aplic_link {
+	width: 50%;
+	border-radius: 2px;
+	border-style: solid;
+	border-width: 2px;
+	width: 100px;
+	margin-right: 10px;
+	padding: 10px;
+	text-align: center;
+}
+.app_link {
+	text-decoration: none;
+	color: aliceblue;
 }
