@@ -13,7 +13,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/main.css?????version=1.0.0" />
+		<link rel="stylesheet" href="css/main.css?????version=2.0.0" />
 	</head>
 	<body>
 		<header class="header">
@@ -22,6 +22,113 @@
 		<main class="main">
 			<div class="container">
 				<section class="section_calc">
+					<div class="calc_structure calculator">
+						<h3>
+							Структура условного обозначения для лазерной чистки и сварки
+						</h3>
+						<div class="calcPair">
+							<select name="genU" id="genU" class="genU">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+							<label for="genU">Поколение</label>
+						</div>
+						<div class="calcPair">
+							<select name="seriesU" id="seriesU" class="seriesU">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+							<label for="seriesU">Серия</label>
+						</div>
+						<div class="calcPair">
+							<select name="typeU" id="typeU" class="typeU">
+								<option value="W">Сварка</option>
+								<option value="C">Чистка</option>
+							</select>
+							<label for="typeU">Тип оборудования</label>
+						</div>
+						<div class="calcPair">
+							<select name="powerU" id="powerU" class="powerU">
+								<option value="1500">1500</option>
+								<option value="2000">2000</option>
+								<option value="3000">3000</option>
+								<option value="6000">6000</option>
+							</select>
+							<label for="powerU">Мощность лазера</label>
+						</div>
+						<div class="calcPair">
+							<select name="manufU" id="manufU" class="manufU">
+								<option value="R">Raycus</option>
+								<option value="B">BWT</option>
+							</select>
+							<label for="manufU">Производитель лазерного источника</label>
+						</div>
+						<div class="calcPair">
+							<p class="parCalc">Выберите длину оптоволокна источника:</p>
+							<select name="lengthPacU" id="lengthPacU" class="lengthPacU">
+								<option value="4">5</option>
+								<option value="9">10</option>
+								<option value="14">15</option>
+								<option value="19">20</option>
+							</select>
+							<label for="lengthPacU">Длина кабель-пакета</label>
+						</div>
+						<div class="calcPair">
+							<select name="headU" id="headU" class="headU">
+								<option value="SUP23C">SUP23C</option>
+								<option value="SUP23S">SUP23S</option>
+								<option value="SUP25T">SUP25T</option>
+								<option value="FWH60C30">FWH60C30</option>
+							</select>
+							<label for="headU">Лазерная головка</label>
+						</div>
+						<div class="calcPair">
+							<select name="numFeedU" id="numFeedU" class="numFeedU">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="4">4</option>
+							</select>
+							<label for="numFeedU">Кол-во катушек проволоки</label>
+						</div>
+						<div class="calcPair">
+							<input type="checkbox" name="faU" id="faU" value="FA" />
+							<label for="faU">Система фильтрации воздуха</label>
+							<input type="checkbox" name="fgU" id="fgU" value="FG" />
+							<label for="fgU">Система фильтрации защитного газа</label>
+							<input type="checkbox" name="cdU" id="cdU" value="CD" />
+							<label for="cdU">Система продувки источника</label>
+							<input type="checkbox" name="mpU" id="mpU" value="MP" />
+							<label for="mpU"
+								>Система отсечки воздуха по максимальному давлению</label
+							>
+							<input type="checkbox" name="psU" id="psU" value="PS" />
+							<label for="psU">Датчик давления воздуха</label>
+							<input type="checkbox" name="nafU" id="nafU" value="NF" />
+							<label for="nafU">Без дополнительных функций</label>
+						</div>
+						<div class="calcPair">
+							<select name="wnU" id="wnU" class="wnU">
+								<option value="AP">есть</option>
+								<option value="NA">нет</option>
+							</select>
+							<label for="wnU">Беспроводной интерфейс</label>
+						</div>
+						<hr />
+						<div class="calcPair">
+							<input
+								type="text"
+								name="strName"
+								id="strName"
+								size="54"
+								disabled
+							/>
+							<label for="strName">Условное обозначение</label>
+						</div>
+						<hr />
+						<button id="calcStrName" class="butCalc">Сгенерировать</button>
+					</div>
 					<div class="calc_wire calculator">
 						<h3>Вычисление диаметра провода по сечению</h3>
 						<div class="calcPair">
@@ -86,10 +193,6 @@
 			</div>
 		</main>
 		<footer class="footer">
-			<div class="warning">
-				Внимание! Если функционал на сайте отличается от функционала приложения
-				то необходимо очистить кэш в настройках телефона.
-			</div>
 			<div class="container">
 				<div class="footer__left">
 					<div class="all_right">Все права защищены©</div>
@@ -99,16 +202,9 @@
 						>
 					</div>
 				</div>
-				<div class="footer_right">
-					<div class="aplic_link">
-						<a href="apps/app-release.apk" class="app_link">Android</a>
-					</div>
-					<div class="aplic_link">
-						<a href="apps/ios_source.tar.gz" class="app_link">iOS</a>
-					</div>
-				</div>
+				<div class="footer_right"></div>
 			</div>
 		</footer>
-		<script src="js/main.js?????version=1.0.0"></script>
+		<script src="js/main.js?????version=2.0.0"></script>
 	</body>
 </html>
