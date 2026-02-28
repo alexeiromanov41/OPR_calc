@@ -16,10 +16,10 @@ const mpU = document.getElementById('mpU');
 const psU = document.getElementById('psU');
 const nafU = document.getElementById('nafU');
 
-const strName = document.getElementById('strName');
 const calcStrName = document.getElementById('calcStrName');
 
 calcStrName.addEventListener('click', () => {
+	let strName = '';
 	let addFunc = 'AF/';
 
 	if (faU.checked) {
@@ -46,7 +46,7 @@ calcStrName.addEventListener('click', () => {
 		addFunc = 'AF/NF/';
 	}
 
-	strName.value =
+	strName =
 		genU.value +
 		'S' +
 		seriesU.value +
@@ -69,6 +69,8 @@ calcStrName.addEventListener('click', () => {
 		addFunc +
 		'-' +
 		wnU.value;
+
+	alert(strName);
 });
 /***** Вычисление условного обозначения       end*************/
 /***** Вычисление диаметра провода по сечению      begin*************/
