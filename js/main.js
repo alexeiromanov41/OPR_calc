@@ -1,3 +1,76 @@
+/***** Вычисление условного обозначения      begin*************/
+const genU = document.getElementById('genU');
+const seriesU = document.getElementById('seriesU');
+const typeU = document.getElementById('typeU');
+const powerU = document.getElementById('powerU');
+const manufU = document.getElementById('manufU');
+const lengthPacU = document.getElementById('lengthPacU');
+const headU = document.getElementById('headU');
+const numFeedU = document.getElementById('numFeedU');
+const wnU = document.getElementById('wnU');
+
+const faU = document.getElementById('faU');
+const fgU = document.getElementById('fgU');
+const cdU = document.getElementById('cdU');
+const mpU = document.getElementById('mpU');
+const psU = document.getElementById('psU');
+const nafU = document.getElementById('nafU');
+
+const strName = document.getElementById('strName');
+const calcStrName = document.getElementById('calcStrName');
+
+calcStrName.addEventListener('click', () => {
+	let addFunc = 'AF/';
+
+	if (faU.checked) {
+		addFunc += 'FA/';
+	}
+
+	if (fgU.checked) {
+		addFunc += 'FG/';
+	}
+
+	if (cdU.checked) {
+		addFunc += 'CD/';
+	}
+
+	if (mpU.checked) {
+		addFunc += 'MP/';
+	}
+
+	if (psU.checked) {
+		addFunc += 'PS/';
+	}
+
+	if (nafU.checked) {
+		addFunc = 'AF/NF/';
+	}
+
+	strName.value =
+		genU.value +
+		'S' +
+		seriesU.value +
+		'-' +
+		typeU.value +
+		'-' +
+		powerU.value +
+		'-' +
+		manufU.value +
+		'-' +
+		'M' +
+		lengthPacU.value +
+		'-' +
+		'H' +
+		headU.value +
+		'-' +
+		'FN' +
+		numFeedU.value +
+		'-' +
+		addFunc +
+		'-' +
+		wnU.value;
+});
+/***** Вычисление условного обозначения       end*************/
 /***** Вычисление диаметра провода по сечению      begin*************/
 const calcWireD = document.getElementById('calcWireD');
 const sqIn = document.getElementById('wireS');
