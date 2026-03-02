@@ -62,13 +62,15 @@ calcStrName.addEventListener('click', () => {
 		'-' +
 		'H' +
 		headU.value +
-		'-' +
-		'FN' +
-		numFeedU.value +
-		'-' +
-		addFunc +
-		'-' +
-		wnU.value;
+		'-';
+
+	if (typeU.value === 'W') {
+		strName += 'FN' + numFeedU.value + '-';
+	} else {
+		strName += '';
+	}
+
+	strName += addFunc + '-' + wnU.value;
 
 	alert(strName);
 });
