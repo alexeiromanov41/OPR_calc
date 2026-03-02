@@ -20,6 +20,7 @@ const calcStrName = document.getElementById('calcStrName');
 
 calcStrName.addEventListener('click', () => {
 	let strName = '';
+	let strArt = '';
 	let addFunc = 'AF/';
 
 	if (faU.checked) {
@@ -72,7 +73,64 @@ calcStrName.addEventListener('click', () => {
 
 	strName += addFunc + '-' + wnU.value;
 
-	alert(strName);
+	strArt +=
+		genU.value +
+		seriesU.value +
+		'L' +
+		typeU.value +
+		powerU.value +
+		manufU.value +
+		lengthPacU.value;
+	if (headU.value === 'SUP20S') strArt += '1';
+	if (headU.value === 'SUP22C') strArt += '2';
+	if (headU.value === 'SUP23T') strArt += '3';
+	if (headU.value === 'SUP27S') strArt += '4';
+	if (headU.value === 'FWH60C30A') strArt += '5';
+	if (typeU.value === 'C') {
+		strArt += '0';
+	} else {
+		strArt += numFeedU.value;
+	}
+
+	if (nafU.checked) {
+		strArt += '00000';
+	} else {
+		if (faU.checked) {
+			strArt += '1';
+		} else {
+			strArt += '0';
+		}
+		if (fgU.checked) {
+			strArt += '1';
+		} else {
+			strArt += '0';
+		}
+		if (cdU.checked) {
+			strArt += '1';
+		} else {
+			strArt += '0';
+		}
+		if (mpU.checked) {
+			strArt += '1';
+		} else {
+			strArt += '0';
+		}
+		if (psU.checked) {
+			strArt += '1';
+		} else {
+			strArt += '0';
+		}
+	}
+
+	if (wnU.value === 'AP') {
+		strArt += 'A';
+	} else {
+		strArt += 'N';
+	}
+
+	alert(
+		'Условное обозначение:' + '\n' + strName + '\n' + 'Артикул:' + '\n' + strArt
+	);
 });
 /***** Вычисление условного обозначения       end*************/
 /***** Вычисление диаметра провода по сечению      begin*************/
