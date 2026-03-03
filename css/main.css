@@ -25,6 +25,160 @@ body {
 	background-color: #3a393913;
 }
 
+/* Общие стили для полей ввода */
+input,
+textarea,
+select {
+	font-family: inherit;
+	font-size: 1rem;
+	padding: 0.6rem 1rem;
+	border: 1px solid #d1d5db;
+	border-radius: 0.5rem;
+	background-color: #fff;
+	transition: border-color 0.2s, box-shadow 0.2s;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Состояние при фокусе */
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: #3b82f6;
+	box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Плейсхолдер */
+::placeholder {
+	color: #9ca3af;
+	opacity: 1;
+}
+
+/* Для disabled полей */
+input:disabled,
+textarea:disabled,
+select:disabled {
+	background-color: #f3f4f6;
+	cursor: not-allowed;
+}
+
+/* Стили для ошибок (добавляйте класс error) */
+input.error,
+textarea.error,
+select.error {
+	border-color: #ef4444;
+}
+input.error:focus {
+	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Контейнер для чекбокса/радио */
+.checkbox-container,
+.radio-container {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+}
+
+/* Скрываем стандартный элемент */
+.checkbox-container input[type='checkbox'],
+.radio-container input[type='radio'] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* Кастомный квадрат для чекбокса */
+.checkbox-custom {
+	display: inline-block;
+	width: 1.2rem;
+	height: 1.2rem;
+	border: 2px solid #d1d5db;
+	border-radius: 4px;
+	transition: all 0.2s;
+	position: relative;
+}
+
+.checkbox-container input:checked + .checkbox-custom {
+	background-color: #3b82f6;
+	border-color: #3b82f6;
+}
+
+.checkbox-container input:checked + .checkbox-custom::after {
+	content: '';
+	display: block;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg) translate(2px, -2px);
+	margin-left: 5px;
+}
+
+/* Кастомный круг для радио */
+.radio-custom {
+	display: inline-block;
+	width: 1.2rem;
+	height: 1.2rem;
+	border: 2px solid #d1d5db;
+	border-radius: 50%;
+	transition: all 0.2s;
+	position: relative;
+}
+
+.radio-container input:checked + .radio-custom {
+	border-color: #3b82f6;
+	background-color: #fff;
+}
+
+.radio-container input:checked + .radio-custom::after {
+	content: '';
+	display: block;
+	width: 0.6rem;
+	height: 0.6rem;
+	background-color: #3b82f6;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.float-label {
+	position: relative;
+	margin-top: 1.5rem;
+}
+
+.float-label input {
+	width: 100%;
+	padding: 0.75rem 0.5rem;
+	border: 1px solid #d1d5db;
+	border-radius: 0.5rem;
+	background: transparent;
+}
+
+.float-label label {
+	position: absolute;
+	left: 0.5rem;
+	top: 0.75rem;
+	color: #9ca3af;
+	transition: 0.2s;
+	pointer-events: none;
+}
+
+.float-label input:focus ~ label,
+.float-label input:not(:placeholder-shown) ~ label {
+	top: -0.5rem;
+	left: 0.25rem;
+	font-size: 0.75rem;
+	background-color: white;
+	padding: 0 0.25rem;
+	color: #3b82f6;
+}
+
 .main {
 	min-height: calc(100vh - 100px);
 }
@@ -86,13 +240,13 @@ h3 {
 }
 
 .calculator {
-	border-radius: 5px;
+	border-radius: 10px;
 	border-style: solid;
 	border-color: #33d7f5;
-	border-width: 2px;
-	padding: 5px;
+	border-width: 8px;
+	padding: 15px;
 	width: 50%;
-	margin: 10px;
+	margin: 20px;
 	height: -webkit-max-content;
 	height: -moz-max-content;
 	height: max-content;
