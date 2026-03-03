@@ -147,6 +147,11 @@ input.error:focus {
 	transform: translate(-50%, -50%);
 }
 
+label {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
 .float-label {
 	position: relative;
 	margin-top: 1.5rem;
@@ -264,7 +269,6 @@ h3 {
 
 .calculator label {
 	display: block;
-	margin-bottom: 5px;
 }
 
 .section_calc {
