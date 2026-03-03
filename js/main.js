@@ -16,12 +16,15 @@ const mpU = document.getElementById('mpU');
 const psU = document.getElementById('psU');
 const nafU = document.getElementById('nafU');
 
+const strNameRes = document.getElementById('strNameRes');
+const artNameRes = document.getElementById('artNameRes');
 const calcStrName = document.getElementById('calcStrName');
 
 calcStrName.addEventListener('click', () => {
 	let strName = '';
 	let strArt = '';
 	let addFunc = 'AF/';
+	let varAF = '';
 
 	if (faU.checked) {
 		addFunc += 'FA/';
@@ -73,14 +76,34 @@ calcStrName.addEventListener('click', () => {
 
 	strName += addFunc + '-' + wnU.value;
 
-	strArt +=
-		genU.value +
-		seriesU.value +
-		'L' +
-		typeU.value +
-		powerU.value +
-		manufU.value +
-		lengthPacU.value;
+	strArt += genU.value + seriesU.value + 'L' + typeU.value;
+	if (powerU.value === '1500') {
+		strArt += '1';
+	}
+	if (powerU.value === '2000') {
+		strArt += '2';
+	}
+	if (powerU.value === '3000') {
+		strArt += '3';
+	}
+	if (powerU.value === '6000') {
+		strArt += '4';
+	}
+	strArt += manufU.value;
+
+	if (lengthPacU.value === '4') {
+		strArt += '1';
+	}
+	if (lengthPacU.value === '9') {
+		strArt += '2';
+	}
+	if (lengthPacU.value === '14') {
+		strArt += '3';
+	}
+	if (lengthPacU.value === '19') {
+		strArt += '4';
+	}
+
 	if (headU.value === 'SUP20S') strArt += '1';
 	if (headU.value === 'SUP22C') strArt += '2';
 	if (headU.value === 'SUP23T') strArt += '3';
@@ -93,34 +116,39 @@ calcStrName.addEventListener('click', () => {
 	}
 
 	if (nafU.checked) {
-		strArt += '00000';
+		varAF = '00000';
 	} else {
 		if (faU.checked) {
-			strArt += '1';
+			varAF += '1';
 		} else {
-			strArt += '0';
+			varAF += '0';
 		}
 		if (fgU.checked) {
-			strArt += '1';
+			varAF += '1';
 		} else {
-			strArt += '0';
+			varAF += '0';
 		}
 		if (cdU.checked) {
-			strArt += '1';
+			varAF += '1';
 		} else {
-			strArt += '0';
+			varAF += '0';
 		}
 		if (mpU.checked) {
-			strArt += '1';
+			varAF += '1';
 		} else {
-			strArt += '0';
+			varAF += '0';
 		}
 		if (psU.checked) {
-			strArt += '1';
+			varAF += '1';
 		} else {
-			strArt += '0';
+			varAF += '0';
 		}
 	}
+
+	let decNumVarAF = Number('0b' + varAF);
+	let formattedDecNumVarAF = decNumVarAF.toString().padStart(2, '0');
+	//console.log(formattedDecNumVarAF);
+	strArt += formattedDecNumVarAF;
 
 	if (wnU.value === 'AP') {
 		strArt += 'A';
@@ -128,9 +156,11 @@ calcStrName.addEventListener('click', () => {
 		strArt += 'N';
 	}
 
-	alert(
-		'Условное обозначение:' + '\n' + strName + '\n' + 'Артикул:' + '\n' + strArt
-	);
+	// alert(
+	// 	'Условное обозначение:' + '\n' + strName + '\n' + 'Артикул:' + '\n' + strArt
+	// );
+	strNameRes.value = strName;
+	artNameRes.value = strArt;
 });
 /***** Вычисление условного обозначения       end*************/
 /***** Вычисление диаметра провода по сечению      begin*************/
