@@ -25,28 +25,34 @@ calcStrName.addEventListener('click', () => {
 	let strArt = '';
 	let addFunc = 'AF/';
 	let varAF = '';
+	let varAddAF = 0;
 
 	if (faU.checked) {
 		addFunc += 'FA/';
+		varAddAF = 1;
 	}
 
 	if (fgU.checked) {
 		addFunc += 'FG/';
+		varAddAF = 1;
 	}
 
 	if (cdU.checked) {
 		addFunc += 'CD/';
+		varAddAF = 1;
 	}
 
 	if (mpU.checked) {
 		addFunc += 'MP/';
+		varAddAF = 1;
 	}
 
 	if (psU.checked) {
 		addFunc += 'PS/';
+		varAddAF = 1;
 	}
 
-	if (nafU.checked) {
+	if (nafU.checked || varAddAF == 0) {
 		addFunc = 'AF/NF/';
 	}
 
