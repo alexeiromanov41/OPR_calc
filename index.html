@@ -99,21 +99,30 @@
 							<label for="numFeedU">Кол-во катушек проволоки</label>
 						</div>
 						<div class="calcPair">
-							<input type="checkbox" name="faU" id="faU" value="FA" />
-							<label for="faU">Система фильтрации воздуха</label>
-							<input type="checkbox" name="fgU" id="fgU" value="FG" />
-							<label for="fgU">Система фильтрации защитного газа</label>
-							<input type="checkbox" name="cdU" id="cdU" value="CD" />
-							<label for="cdU">Система продувки лазерного источника</label>
-							<input type="checkbox" name="mpU" id="mpU" value="MP" />
-							<label for="mpU"
-								>Система отсечки входного воздуха по максимальному
-								давлению</label
-							>
-							<input type="checkbox" name="psU" id="psU" value="PS" />
-							<label for="psU">Датчик давления воздуха</label>
-							<input type="checkbox" name="nafU" id="nafU" value="NF" />
-							<label for="nafU">Без дополнительных функций</label>
+							<div class="calcPair">
+								<input type="checkbox" name="faU" id="faU" value="FA" />
+								<label for="faU">Система фильтрации воздуха</label>
+							</div>
+							<div class="calcPair">
+								<input type="checkbox" name="fgU" id="fgU" value="FG" />
+								<label for="fgU">Система фильтрации защитного газа</label>
+							</div>
+							<div class="calcPair">
+								<input type="checkbox" name="cdU" id="cdU" value="CD" />
+								<label for="cdU">Система продувки источника</label>
+							</div>
+							<div class="calcPair">
+								<input type="checkbox" name="mpU" id="mpU" value="MP" />
+								<label for="mpU">Отсечка по давлению</label>
+							</div>
+							<div class="calcPair">
+								<input type="checkbox" name="psU" id="psU" value="PS" />
+								<label for="psU">Датчик давления воздуха</label>
+							</div>
+							<div class="calcPair">
+								<input type="checkbox" name="nafU" id="nafU" value="NF" />
+								<label for="nafU">Без дополнительных функций</label>
+							</div>
 						</div>
 						<div class="calcPair">
 							<select name="wnU" id="wnU" class="wnU">
@@ -126,10 +135,14 @@
 							>
 						</div>
 						<hr />
-						<input type="text" name="strNameRes" id="strNameRes" size="60" />
-						<label for="strNameRes">Условное обозначение</label>
-						<input type="text" name="artNameRes" id="artNameRes" size="60" />
-						<label for="artNameRes">Артикул</label>
+						<div class="calcPair">
+							<input type="text" name="strNameRes" id="strNameRes" />
+							<label for="strNameRes">Условное обозначение</label>
+						</div>
+						<div class="calcPair">
+							<input type="text" name="artNameRes" id="artNameRes" />
+							<label for="artNameRes">Артикул</label>
+						</div>
 						<hr />
 						<button id="calcStrName" class="butCalc">Сгенерировать</button>
 					</div>
