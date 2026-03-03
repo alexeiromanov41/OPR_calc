@@ -1,373 +1,295 @@
-body {
-	background-image: url(../img/bg_1.jpg);
-	background-repeat: repeat;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	font-family: 'Roboto', sans-serif;
-}
-
-.header {
-	height: 50px;
-}
-
-.header .container {
-	height: 100%;
-	width: 90%;
-	background-image: url(../img/OPR.png);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-color: #3a393913;
-}
-
-/* Общие стили для полей ввода */
-input,
-textarea,
-select {
-	font-family: inherit;
-	font-size: 1rem;
-	padding: 0.6rem 1rem;
-	border: 1px solid #d1d5db;
-	border-radius: 0.5rem;
-	background-color: #fff;
-	transition: border-color 0.2s, box-shadow 0.2s;
-	width: 100%;
+/* main.css — исправленная версия */
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
-/* Состояние при фокусе */
-input:focus,
-textarea:focus,
-select:focus {
-	outline: none;
-	border-color: #3b82f6;
-	box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+:root {
+	--dark: #1e1e1e;
+	--gray-dark: #2d2d2d;
+	--gray: #6c757d;
+	--gray-light: #e9ecef;
+	--accent: #f39c12;
+	--accent-hover: #e67e22;
+	--white: #ffffff;
+	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--border-radius: 12px;
 }
 
-/* Плейсхолдер */
-::placeholder {
-	color: #9ca3af;
-	opacity: 1;
-}
-
-/* Для disabled полей */
-input:disabled,
-textarea:disabled,
-select:disabled {
-	background-color: #f3f4f6;
-	cursor: not-allowed;
-}
-
-/* Стили для ошибок (добавляйте класс error) */
-input.error,
-textarea.error,
-select.error {
-	border-color: #ef4444;
-}
-input.error:focus {
-	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
-}
-
-/* Контейнер для чекбокса/радио */
-.checkbox-container,
-.radio-container {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	cursor: pointer;
-}
-
-/* Скрываем стандартный элемент */
-.checkbox-container input[type='checkbox'],
-.radio-container input[type='radio'] {
-	position: absolute;
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-
-/* Кастомный квадрат для чекбокса */
-.checkbox-custom {
-	display: inline-block;
-	width: 1.2rem;
-	height: 1.2rem;
-	border: 2px solid #d1d5db;
-	border-radius: 4px;
-	transition: all 0.2s;
-	position: relative;
-}
-
-.checkbox-container input:checked + .checkbox-custom {
-	background-color: #3b82f6;
-	border-color: #3b82f6;
-}
-
-.checkbox-container input:checked + .checkbox-custom::after {
-	content: '';
-	display: block;
-	width: 5px;
-	height: 10px;
-	border: solid white;
-	border-width: 0 2px 2px 0;
-	transform: rotate(45deg) translate(2px, -2px);
-	margin-left: 5px;
-}
-
-/* Кастомный круг для радио */
-.radio-custom {
-	display: inline-block;
-	width: 1.2rem;
-	height: 1.2rem;
-	border: 2px solid #d1d5db;
-	border-radius: 50%;
-	transition: all 0.2s;
-	position: relative;
-}
-
-.radio-container input:checked + .radio-custom {
-	border-color: #3b82f6;
-	background-color: #fff;
-}
-
-.radio-container input:checked + .radio-custom::after {
-	content: '';
-	display: block;
-	width: 0.6rem;
-	height: 0.6rem;
-	background-color: #3b82f6;
-	border-radius: 50%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-label {
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-
-.float-label {
-	position: relative;
-	margin-top: 1.5rem;
-}
-
-.float-label input {
-	width: 100%;
-	padding: 0.75rem 0.5rem;
-	border: 1px solid #d1d5db;
-	border-radius: 0.5rem;
-	background: transparent;
-}
-
-.float-label label {
-	position: absolute;
-	left: 0.5rem;
-	top: 0.75rem;
-	color: #9ca3af;
-	transition: 0.2s;
-	pointer-events: none;
-}
-
-.float-label input:focus ~ label,
-.float-label input:not(:placeholder-shown) ~ label {
-	top: -0.5rem;
-	left: 0.25rem;
-	font-size: 0.75rem;
-	background-color: white;
-	padding: 0 0.25rem;
-	color: #3b82f6;
-}
-
-.main {
-	min-height: calc(100vh - 100px);
-}
-
-.main .container {
-	min-height: calc(100vh - 100px);
-}
-
-.footer {
-	height: 50px;
-}
-
-.footer .container {
-	background-color: #393939;
-	color: white;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-.footer .footer__left {
-	width: -webkit-max-content;
-	width: -moz-max-content;
-	width: max-content;
-}
-
-.footer .footer__right {
-	width: -webkit-max-content;
-	width: -moz-max-content;
-	width: max-content;
-}
-
-h1 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	font-size: 36px;
-	line-height: 40px;
-	text-align: center;
-	letter-spacing: 2px;
-}
-
-h3 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	font-size: 18px;
-	letter-spacing: 1px;
+body {
+	font-family: 'Montserrat', 'Roboto', sans-serif;
+	background-color: #f4f7f9;
+	color: #333;
+	line-height: 1.5;
+	margin: 0;
 }
 
 .container {
 	max-width: 1200px;
-	margin: auto;
-	background-color: azure;
-	padding: 5px;
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 100%;
 }
 
+/* Шапка и подвал */
+.header,
+.footer {
+	background-color: var(--dark);
+	color: var(--white);
+	padding: 20px 0;
+}
+
+.footer {
+	margin-top: 40px;
+	font-size: 14px;
+}
+
+.footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.footer a {
+	color: var(--accent);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.footer a:hover {
+	color: var(--accent-hover);
+	text-decoration: underline;
+}
+
+/* Основной контент */
+.main {
+	padding: 30px 0;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: 600;
+	margin: 0 0 30px;
+	color: var(--dark);
+	border-left: 4px solid var(--accent);
+	padding-left: 15px;
+}
+
+/* Сетка калькуляторов */
+.section_calc {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 30px;
+	align-items: start;
+}
+
+/* Карточка калькулятора */
 .calculator {
-	border-radius: 10px;
-	border-style: solid;
-	border-color: #33d7f5;
-	border-width: 8px;
-	padding: 15px;
-	width: 50%;
-	margin: 20px;
-	height: -webkit-max-content;
-	height: -moz-max-content;
-	height: max-content;
+	background: var(--white);
+	border-radius: var(--border-radius);
+	padding: 25px 20px;
+	box-shadow: var(--shadow);
+	transition: transform 0.2s, box-shadow 0.2s;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	width: 100%;
+	overflow: hidden; /* защита от вылезания контента */
+}
+
+.calculator:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .calculator h3 {
-	line-height: 24px;
-	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0 0 20px;
+	color: var(--dark);
+	border-bottom: 2px solid var(--accent);
+	padding-bottom: 10px;
 }
 
-.calculator input {
-	display: block;
-	margin-bottom: 5px;
-}
-
-.calculator label {
-	display: block;
-}
-
-.section_calc {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	padding-top: 20px;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-}
-
-.parCalc {
-	margin-bottom: 5px;
-	font-style: italic;
-	font-weight: 700;
-}
-
-.developer__link {
-	text-decoration: none;
-	line-height: 30px;
-	color: antiquewhite;
-}
-
-.kpdUPS {
-	margin-bottom: 5px;
-}
-
-.butCalc {
-	display: block;
-	width: 180px;
-	height: 34px;
-	margin: 0 auto;
-}
-
+/* Общий стиль для пар (label + поле) */
 .calcPair {
-	margin-bottom: 20px;
-	border-style: solid;
-	border-width: 1px;
-	padding: 5px;
-	border-color: #39393946;
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
 }
 
-.footer_right {
-	width: 50%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
+.calcPair label {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--gray);
+	margin-bottom: 5px;
+	order: 1;
+}
+
+.calcPair input,
+.calcPair select {
+	order: 2;
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid #ced4da;
+	border-radius: 8px;
+	font-family: inherit;
+	font-size: 15px;
+	transition: border-color 0.2s, box-shadow 0.2s;
+	background-color: var(--white);
+}
+
+.calcPair input:focus,
+.calcPair select:focus {
+	outline: none;
+	border-color: var(--accent);
+	box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
+}
+
+/* Стили для блока с чекбоксами */
+.calcPair:has(input[type='checkbox']) {
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 8px 15px;
 	align-items: center;
 }
 
-.aplic_link {
-	width: 50%;
-	border-radius: 2px;
-	border-style: solid;
-	border-width: 2px;
-	width: 100px;
-	margin-right: 10px;
-	padding: 10px;
-	text-align: center;
+.calcPair input[type='checkbox'] {
+	width: auto;
+	margin: 0 5px 0 0;
+	order: 0;
+	flex: 0 0 auto;
 }
 
-.app_link {
-	text-decoration: none;
-	color: aliceblue;
+.calcPair input[type='checkbox'] + label {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	font-weight: normal;
+	color: var(--text-primary);
+	order: 0;
+	flex: 0 1 auto;
+	cursor: pointer;
 }
 
-.warning {
-	max-width: 1200px;
-	background-color: rgba(255, 255, 0, 0.589);
-	text-align: center;
-	margin: 0 auto;
-	padding: 10px 10px 20px 10px;
-	font-weight: 700;
+/* Отключаем стандартное поведение flex-колонки для чекбоксов */
+.calcPair:has(input[type='checkbox']) label {
+	margin-bottom: 0;
 }
 
-@media screen and (max-width: 689px) {
+/* Текст-пояснение */
+.parCalc {
+	font-size: 15px;
+	color: var(--gray-dark);
+	margin: 10px 0 5px;
+	font-weight: 500;
+}
+
+/* Разделитель */
+hr {
+	border: none;
+	border-top: 1px solid #dee2e6;
+	margin: 20px 0;
+}
+
+/* Поля результата (disabled) */
+.calcPair input:disabled {
+	background-color: var(--gray-light);
+	color: #495057;
+	border-color: #ced4da;
+	cursor: not-allowed;
+}
+
+/* Кнопка */
+.butCalc {
+	background-color: var(--accent);
+	color: var(--white);
+	border: none;
+	padding: 14px 25px;
+	border-radius: 40px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.2s, transform 0.1s;
+	width: 100%;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.butCalc:hover {
+	background-color: var(--accent-hover);
+}
+
+.butCalc:active {
+	transform: scale(0.98);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+	.section_calc {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.calculator {
+		padding: 20px 15px;
+	}
+
+	h1 {
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+
+	.calculator h3 {
+		font-size: 18px;
+	}
+
+	.calcPair input,
+	.calcPair select {
+		padding: 10px 12px;
+		font-size: 14px;
+	}
+
+	.butCalc {
+		padding: 12px 20px;
+		font-size: 15px;
+	}
+
+	/* На мобильных чекбоксы тоже остаются в строку, но при необходимости можно сделать колонку */
+	.calcPair:has(input[type='checkbox']) {
+		gap: 8px 10px;
+	}
+
 	.footer .container {
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
 		flex-direction: column;
-	}
-	.footer_right {
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		align-items: center;
-		width: 100%;
+		text-align: center;
 	}
 }
-/*# sourceMappingURL=main.css.map */
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0 10px;
+	}
+
+	.calculator {
+		padding: 15px 10px;
+	}
+
+	.calcPair label {
+		font-size: 13px;
+	}
+
+	.calcPair input,
+	.calcPair select {
+		font-size: 14px;
+		padding: 10px;
+	}
+
+	/* На совсем маленьких экранах можно сделать чекбоксы в колонку */
+	.calcPair:has(input[type='checkbox']) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+	}
+}
