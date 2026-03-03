@@ -1,4 +1,4 @@
-/* main.css — исправленная версия */
+/* main.css — финальная версия с пульсацией кнопки */
 *,
 *::before,
 *::after {
@@ -95,7 +95,7 @@ h1 {
 	transition: transform 0.2s, box-shadow 0.2s;
 	border: 1px solid rgba(0, 0, 0, 0.05);
 	width: 100%;
-	overflow: hidden; /* защита от вылезания контента */
+	overflow: hidden;
 }
 
 .calculator:hover {
@@ -172,7 +172,6 @@ h1 {
 	cursor: pointer;
 }
 
-/* Отключаем стандартное поведение flex-колонки для чекбоксов */
 .calcPair:has(input[type='checkbox']) label {
 	margin-bottom: 0;
 }
@@ -200,7 +199,23 @@ hr {
 	cursor: not-allowed;
 }
 
-/* Кнопка */
+/* Анимация пульсации для кнопки */
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+	50% {
+		transform: scale(1.02);
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+	}
+	100% {
+		transform: scale(1);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+}
+
+/* Кнопка с эффектами */
 .butCalc {
 	background-color: var(--accent);
 	color: var(--white);
@@ -210,19 +225,25 @@ hr {
 	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
-	transition: background-color 0.2s, transform 0.1s;
 	width: 100%;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	animation: pulse 2s infinite ease-in-out;
+	transition: background-color 0.2s; /* для плавности смены фона */
 }
 
 .butCalc:hover {
+	animation: none; /* отключаем пульсацию */
 	background-color: var(--accent-hover);
+	transform: scale(1.02);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .butCalc:active {
+	animation: none;
 	transform: scale(0.98);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: var(--accent-hover);
 }
 
 /* Адаптивность для мобильных */
@@ -254,9 +275,9 @@ hr {
 	.butCalc {
 		padding: 12px 20px;
 		font-size: 15px;
+		animation: pulse 2s infinite ease-in-out; /* сохраняем на мобильных */
 	}
 
-	/* На мобильных чекбоксы тоже остаются в строку, но при необходимости можно сделать колонку */
 	.calcPair:has(input[type='checkbox']) {
 		gap: 8px 10px;
 	}
@@ -286,7 +307,6 @@ hr {
 		padding: 10px;
 	}
 
-	/* На совсем маленьких экранах можно сделать чекбоксы в колонку */
 	.calcPair:has(input[type='checkbox']) {
 		flex-direction: column;
 		align-items: flex-start;
