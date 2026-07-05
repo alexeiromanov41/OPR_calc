@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
@@ -13,7 +13,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/main.css?????version=1.0.9" />
+		<link rel="stylesheet" href="css/main.css?????version=1.0.10" />
 	</head>
 	<body>
 		<header class="header">
@@ -28,125 +28,165 @@
 							Структура условного обозначения для лазерной чистки и сварки
 						</h3>
 						<div class="calcPair">
-							<select name="genU" id="genU" class="genU">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-							</select>
-							<label for="genU">Поколение</label>
-						</div>
-						<div class="calcPair">
-							<select name="seriesU" id="seriesU" class="seriesU">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-							</select>
-							<label for="seriesU">Серия</label>
-						</div>
-						<div class="calcPair">
-							<select name="typeU" id="typeU" class="typeU">
-								<option value="W">Сварка</option>
+							<select name="catLMD" id="catLMD" class="catLMD">
 								<option value="C">Чистка</option>
+								<option value="M">Сварка</option>
 							</select>
-							<label for="typeU">Тип оборудования</label>
+							<label for="catLMD">Тип оборудования</label>
+						</div>
+						<div id="powerSectionLMD" class="calcPair">
+							<select name="pwrLMD" id="pwrLMD" class="pwrLMD">
+								<option value="1">500</option>
+								<option value="2">1000</option>
+								<option value="3">1500</option>
+								<option value="4">2000</option>
+								<option value="5">3000</option>
+								<option value="6">4000</option>
+								<option value="7">6000</option>
+							</select>
+							<label for="pwrLMD">Мощность лазера, Вт (оптическая)</label>
 						</div>
 						<div class="calcPair">
-							<select name="powerU" id="powerU" class="powerU">
-								<option value="1500">1500</option>
-								<option value="2000">2000</option>
-								<option value="3000">3000</option>
-								<option value="6000">6000</option>
-							</select>
-							<label for="powerU">Мощность лазера, Вт (оптическая)</label>
-						</div>
-						<div class="calcPair">
-							<select name="manufU" id="manufU" class="manufU">
-								<option value="R">Raycus</option>
+							<select name="mnfLMD" id="mnfLMD" class="mnfLMD">
 								<option value="B">BWT</option>
+								<option value="R">Raycus</option>
 							</select>
-							<label for="manufU">Производитель лазерного источника</label>
+							<label for="mnfLMD">Производитель лазерного источника</label>
 						</div>
 						<div class="calcPair">
-							<p class="parCalc">Выберите длину оптоволокна источника:</p>
-							<select name="lengthPacU" id="lengthPacU" class="lengthPacU">
-								<option value="4">5</option>
-								<option value="9">10</option>
-								<option value="14">15</option>
-								<option value="19">20</option>
+							<select name="lenLMD" id="lenLMD" class="lenLMD">
+								<option value="04">4</option>
+								<option value="05">5</option>
+								<option value="06">6</option>
+								<option value="07">7</option>
+								<option value="08">8</option>
+								<option value="09">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
 							</select>
-							<label for="lengthPacU"
-								>Длина кабель-пакета (на 1 метр меньше длины оптоволокна
-								источника)</label
+							<label for="lenLMD"
+								>Длина кабель-пакета:<br />(как минимум на 1 метр меньше длины
+								оптоволокна источника)</label
 							>
 						</div>
-						<div class="calcPair">
-							<select name="headU" id="headU" class="headU">
-								<option value="SUP20S">SUP20S Сварка (MAX 2000 Вт)</option>
-								<option value="SUP22C">SUP22C Чистка (MAX 3000 Вт)</option>
-								<option value="SUP23T">SUP23T Сварка (MAX 3000 Вт)</option>
-								<option value="SUP27S">SUP27S Сварка (MAX 3000 Вт)</option>
-								<option value="FWH60C30A">
-									FWH60C30A Чистка (MAX 6000 Вт)
-								</option>
-								<option value="SUP33T">SUP33T Сварка (MAX 3000 Вт)</option>
-							</select>
-							<label for="headU">Лазерная головка</label>
-						</div>
-						<div class="calcPair">
-							<select name="numFeedU" id="numFeedU" class="numFeedU">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="4">4</option>
-							</select>
-							<label for="numFeedU">Кол-во катушек проволоки</label>
-						</div>
-						<div class="calcPair">
-							<div class="calcPair">
-								<input type="checkbox" name="faU" id="faU" value="FA" />
-								<label for="faU">Система фильтрации воздуха</label>
-							</div>
-							<div class="calcPair">
-								<input type="checkbox" name="fgU" id="fgU" value="FG" />
-								<label for="fgU">Система фильтрации защитного газа</label>
-							</div>
-							<div class="calcPair">
-								<input type="checkbox" name="cdU" id="cdU" value="CD" />
-								<label for="cdU">Система продувки источника</label>
-							</div>
-							<div class="calcPair">
-								<input type="checkbox" name="mpU" id="mpU" value="MP" />
-								<label for="mpU">Отсечка по давлению</label>
-							</div>
-							<div class="calcPair">
-								<input type="checkbox" name="psU" id="psU" value="PS" />
-								<label for="psU">Датчик давления воздуха</label>
-							</div>
-							<div class="calcPair">
-								<input type="checkbox" name="nafU" id="nafU" value="NF" />
-								<label for="nafU">Без дополнительных функций</label>
-							</div>
-						</div>
-						<div class="calcPair">
-							<select name="wnU" id="wnU" class="wnU">
-								<option value="AP">есть</option>
-								<option value="NA">нет</option>
-							</select>
-							<label for="wnU"
-								>Беспроводной интерфейс (в зависимости от модели лазерной
-								головки)</label
+						<div id="cleanHeadSectionLMD" class="calcPair">
+							<select
+								name="headCleanLMD"
+								id="headCleanLMD"
+								class="headCleanLMD"
 							>
+								<option value="01">SUP22C (MAX 3000 Вт)</option>
+								<option value="02">SUP22M (MAX 3000 Вт)</option>
+								<option value="03">SUP32C (MAX 3000 Вт)</option>
+								<option value="04">SUP52C (MAX 6000 Вт)</option>
+								<option value="05">FWH20-C20A (MAX 3000 Вт)</option>
+								<option value="06">FWH60-C30A (MAX 6000 Вт)</option>
+								<option value="07">FWH20-DC30A (MAX 3000 Вт)</option>
+								<option value="08">FWH30-DC30B (MAX 3000 Вт)</option>
+							</select>
+							<label for="headCleanLMD">Лазерная головка для чистки</label>
+						</div>
+						<div id="weldHeadSectionLMD" class="calcPair displayNone">
+							<select name="headWeldLMD" id="headWeldLMD" class="headWeldLMD">
+								<option value="01">SUP53T 4в1 (MAX 6000 Вт)</option>
+								<option value="02">SUP33T 4в1 (MAX 3000 Вт)</option>
+								<option value="03">SUP31F 3в1 (MAX 1500 Вт)</option>
+								<option value="04">SUP28T 4в1 (MAX 3000 Вт)</option>
+								<option value="05">SUP20S 3в1 (MAX 2000 Вт)</option>
+								<option value="06">SUP21T 4в1 (MAX 3000 Вт)</option>
+								<option value="07">SUP23T 4в1 (MAX 3000 Вт)</option>
+								<option value="08">SUP23S 3в1 (MAX 3000 Вт)</option>
+								<option value="09">SUP28F 3в1 (MAX 1200 Вт)</option>
+								<option value="10">FWH20-S10C 4в1 (MAX 3000 Вт)</option>
+								<option value="11">FWH20-S20C 4в1 (MAX 3000 Вт)</option>
+								<option value="12">FWH20-S40C 4в1 (MAX 3000 Вт)</option>
+								<option value="13">FWH60-S40A 3в1 (MAX 6000 Вт)</option>
+								<option value="14">FWH15-ACS10C 4в1 (MAX 1500 Вт)</option>
+								<option value="15">FWH15-ACS20C 4в1 (MAX 1500 Вт)</option>
+								<option value="16">FWH20-S30C 4в1 (MAX 3000 Вт)</option>
+								<option value="17">FWH20-S32C 4в1 (MAX 3000 Вт)</option>
+								<option value="18">FWH15-ACS10E 5в1 (MAX 1500 Вт)</option>
+								<option value="19">FWH30-D10C 4в1 (MAX 3000 Вт)</option>
+								<option value="20">FWH30-D20C 4в1 (MAX 3000 Вт)</option>
+								<option value="21">FWH30-DS10E 5в1 (MAX 3000 Вт)</option>
+								<option value="22">FWH30-DS20E 5в1 (MAX 3000 Вт)</option>
+								<option value="23">FWH30-D40C 4в1 (MAX 3000 Вт)</option>
+								<option value="24">FWH30-DS10F 6в1 (MAX 3000 Вт)</option>
+								<option value="25">SUP27S контактная (MAX 3000 Вт)</option>
+							</select>
+							<label for="headWeldLMD">Лазерная головка для сварки</label>
+						</div>
+						<div class="calcPair">
+							<div class="calcPair">
+								<input type="checkbox" name="faULMD" id="faULMD" />
+								<label for="faULMD">Защита по давлению воздуха</label>
+							</div>
+							<div class="calcPair">
+								<input type="checkbox" name="fgULMD" id="fgULMD" />
+								<label for="fgULMD">Система фильтрации воздуха</label>
+							</div>
+							<div id="pressureSensorSectionLMD" class="calcPair">
+								<input type="checkbox" name="cdULMD" id="cdULMD" />
+								<label for="cdULMD">Датчик давления воздуха</label>
+							</div>
+							<div id="protectGasFilterSectionLMD" class="calcPair displayNone">
+								<input type="checkbox" name="mpULMD" id="mpULMD" />
+								<label for="mpULMD">Система фильтрации защитного газа</label>
+							</div>
+							<div class="calcPair">
+								<input type="checkbox" name="psULMD" id="psULMD" />
+								<label for="psULMD">Продувка лазерного источника</label>
+							</div>
+						</div>
+						<div id="feedSectionLMD" class="calcPair displayNone">
+							<select name="nameFeedLMD" id="nameFeedLMD" class="nameFeedLMD">
+								<option value="00">без подающего</option>
+								<option value="01">SUP-AMF-A</option>
+								<option value="02">SUP-AMF-C</option>
+								<option value="03">SUP-AMF-D</option>
+								<option value="04">SUP-AMF-P2</option>
+								<option value="05">SUP-AMF-PD</option>
+								<option value="06">SUP-AMF-T</option>
+								<option value="07">SUP-G1</option>
+								<option value="08">FWS-01A</option>
+								<option value="09">FWS-02A</option>
+								<option value="10">FWS-03A</option>
+								<option value="11">FWS-04A</option>
+								<option value="12">FWS-06A</option>
+							</select>
+							<label for="nameFeedLMD">Подающий механизм</label>
+						</div>
+						<div class="calcPair">
+							<select name="genLMD" id="genLMD" class="genLMD">
+								<option value="1">1 (свой корпус)</option>
+								<option value="2">2 (покупной корпус)</option>
+							</select>
+							<label for="genLMD">Поколение</label>
 						</div>
 						<hr />
 						<div class="calcPair">
-							<input type="text" name="strNameRes" id="strNameRes" />
-							<label for="strNameRes">Условное обозначение</label>
+							<input type="text" name="nameResLMD" id="nameResLMD" />
+							<label for="nameResLMD">Условное обозначение</label>
 						</div>
 						<div class="calcPair">
-							<input type="text" name="artNameRes" id="artNameRes" />
-							<label for="artNameRes">Артикул</label>
+							<input type="text" name="artResLMD" id="artResLMD" />
+							<label for="artResLMD">Артикул</label>
 						</div>
 						<hr />
-						<button id="calcStrName" class="butCalc">Сгенерировать</button>
+						<button id="calcStrLMD" class="butCalc">Сгенерировать</button>
 					</div>
 					<div class="calc_wire calculator">
 						<h3>Вычисление диаметра провода по сечению</h3>
@@ -224,6 +264,6 @@
 				<div class="footer_right"></div>
 			</div>
 		</footer>
-		<script src="js/main.js?????version=1.0.9"></script>
+		<script src="js/main.js?????version=1.0.10"></script>
 	</body>
 </html>
