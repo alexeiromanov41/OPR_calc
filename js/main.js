@@ -1,174 +1,164 @@
 /***** Вычисление условного обозначения      begin*************/
-const genU = document.getElementById('genU');
-const seriesU = document.getElementById('seriesU');
-const typeU = document.getElementById('typeU');
-const powerU = document.getElementById('powerU');
-const manufU = document.getElementById('manufU');
-const lengthPacU = document.getElementById('lengthPacU');
-const headU = document.getElementById('headU');
-const numFeedU = document.getElementById('numFeedU');
-const wnU = document.getElementById('wnU');
+const genLMD = document.getElementById('genLMD');
+const catLMD = document.getElementById('catLMD');
+const pwrLMD = document.getElementById('pwrLMD');
+const mnfLMD = document.getElementById('mnfLMD');
+const lenLMD = document.getElementById('lenLMD');
+const headCleanLMD = document.getElementById('headCleanLMD');
+const headWeldLMD = document.getElementById('headWeldLMD');
+const nameFeedLMD = document.getElementById('nameFeedLMD');
+const wnULMD = document.getElementById('wnULMD');
 
-const faU = document.getElementById('faU');
-const fgU = document.getElementById('fgU');
-const cdU = document.getElementById('cdU');
-const mpU = document.getElementById('mpU');
-const psU = document.getElementById('psU');
-const nafU = document.getElementById('nafU');
+const faULMD = document.getElementById('faULMD');
+const fgULMD = document.getElementById('fgULMD');
+const cdULMD = document.getElementById('cdULMD');
+const mpULMD = document.getElementById('mpULMD');
+const psULMD = document.getElementById('psULMD');
 
-const strNameRes = document.getElementById('strNameRes');
-const artNameRes = document.getElementById('artNameRes');
-const calcStrName = document.getElementById('calcStrName');
+const nameResLMD = document.getElementById('nameResLMD');
+const artResLMD = document.getElementById('artResLMD');
+const calcStrLMD = document.getElementById('calcStrLMD');
 
-calcStrName.addEventListener('click', () => {
+const pwrSecLMD = document.getElementById('powerSectionLMD');
+const clHdSecLMD = document.getElementById('cleanHeadSectionLMD');
+const wlHdSecLMD = document.getElementById('weldHeadSectionLMD');
+const prSnrSecLMD = document.getElementById('pressureSensorSectionLMD');
+const prtGasFltrSecLMD = document.getElementById('protectGasFilterSectionLMD');
+const fdSecLMD = document.getElementById('feedSectionLMD');
+
+catLMD.addEventListener('change', () => {
+	if (catLMD.value === 'M') {
+		clHdSecLMD.classList.add('displayNone');
+		wlHdSecLMD.classList.remove('displayNone');
+
+		prSnrSecLMD.classList.add('displayNone');
+		prtGasFltrSecLMD.classList.remove('displayNone');
+
+		fdSecLMD.classList.remove('displayNone');
+	} else {
+		clHdSecLMD.classList.remove('displayNone');
+		wlHdSecLMD.classList.add('displayNone');
+
+		prSnrSecLMD.classList.remove('displayNone');
+		prtGasFltrSecLMD.classList.add('displayNone');
+
+		fdSecLMD.classList.add('displayNone');
+	}
+});
+
+calcStrLMD.addEventListener('click', () => {
 	let strName = '';
 	let strArt = '';
-	let addFunc = 'AF/';
-	let varAF = '';
-	let varAddAF = 0;
 
-	if (faU.checked) {
-		addFunc += 'FA/';
-		varAddAF = 1;
-	}
+	strName += catLMD.value;
+	strArt += catLMD.value;
+	strName += '-';
+	strName += pwrLMD.options[pwrLMD.selectedIndex].text;
+	strArt += pwrLMD.value;
+	strName += '-';
+	strName += mnfLMD.value;
+	strArt += mnfLMD.value;
+	strName += '-';
+	strName += 'L';
+	strName += lenLMD.value;
+	strArt += lenLMD.value;
+	strName += '-';
+	strName += 'H';
 
-	if (fgU.checked) {
-		addFunc += 'FG/';
-		varAddAF = 1;
-	}
-
-	if (cdU.checked) {
-		addFunc += 'CD/';
-		varAddAF = 1;
-	}
-
-	if (mpU.checked) {
-		addFunc += 'MP/';
-		varAddAF = 1;
-	}
-
-	if (psU.checked) {
-		addFunc += 'PS/';
-		varAddAF = 1;
-	}
-
-	if (nafU.checked || varAddAF == 0) {
-		addFunc = 'AF/NF/';
-	}
-
-	strName =
-		genU.value +
-		'S' +
-		seriesU.value +
-		'-' +
-		typeU.value +
-		'-' +
-		powerU.value +
-		'-' +
-		manufU.value +
-		'-' +
-		'M' +
-		lengthPacU.value +
-		'-' +
-		'H' +
-		headU.value +
-		'-';
-
-	if (typeU.value === 'W') {
-		strName += 'FN' + numFeedU.value + '-';
+	/* **************** */
+	if (catLMD.value === 'C') {
+		/* Чистка */
+		strName += headCleanLMD.value;
+		strArt += headCleanLMD.value;
 	} else {
-		strName += '';
+		/* Сварка */
+		strName += headWeldLMD.value;
+		strArt += headWeldLMD.value;
 	}
+	/* **************** */
 
-	strName += addFunc + '-' + wnU.value;
+	strName += '-';
+	strName += 'F';
 
-	strArt += genU.value + seriesU.value + 'L' + typeU.value;
-	if (powerU.value === '1500') {
+	/* **************** */
+	if (faULMD.checked) {
+		strName += '1';
 		strArt += '1';
-	}
-	if (powerU.value === '2000') {
-		strArt += '2';
-	}
-	if (powerU.value === '3000') {
-		strArt += '3';
-	}
-	if (powerU.value === '6000') {
-		strArt += '4';
-	}
-	strArt += manufU.value;
-
-	if (lengthPacU.value === '4') {
-		strArt += '1';
-	}
-	if (lengthPacU.value === '9') {
-		strArt += '2';
-	}
-	if (lengthPacU.value === '14') {
-		strArt += '3';
-	}
-	if (lengthPacU.value === '19') {
-		strArt += '4';
-	}
-
-	if (headU.value === 'SUP20S') strArt += '1';
-	if (headU.value === 'SUP22C') strArt += '2';
-	if (headU.value === 'SUP23T') strArt += '3';
-	if (headU.value === 'SUP27S') strArt += '4';
-	if (headU.value === 'FWH60C30A') strArt += '5';
-	if (typeU.value === 'C') {
+	} else {
+		strName += '0';
 		strArt += '0';
-	} else {
-		strArt += numFeedU.value;
 	}
+	/* **************** */
 
-	if (nafU.checked) {
-		varAF = '00000';
+	/* **************** */
+	if (fgULMD.checked) {
+		strName += '1';
+		strArt += '1';
 	} else {
-		if (faU.checked) {
-			varAF += '1';
-		} else {
-			varAF += '0';
-		}
-		if (fgU.checked) {
-			varAF += '1';
-		} else {
-			varAF += '0';
-		}
-		if (cdU.checked) {
-			varAF += '1';
-		} else {
-			varAF += '0';
-		}
-		if (mpU.checked) {
-			varAF += '1';
-		} else {
-			varAF += '0';
-		}
-		if (psU.checked) {
-			varAF += '1';
-		} else {
-			varAF += '0';
-		}
+		strName += '0';
+		strArt += '0';
 	}
+	/* **************** */
 
-	let decNumVarAF = Number('0b' + varAF);
-	let formattedDecNumVarAF = decNumVarAF.toString().padStart(2, '0');
-	//console.log(formattedDecNumVarAF);
-	strArt += formattedDecNumVarAF;
-
-	if (wnU.value === 'AP') {
-		strArt += 'A';
+	/* **************** */
+	if (catLMD.value === 'C') {
+		/* Чистка */
+		/* **************** */
+		if (cdULMD.checked) {
+			strName += '1';
+			strArt += '1';
+		} else {
+			strName += '0';
+			strArt += '0';
+		}
+		/* **************** */
 	} else {
-		strArt += 'N';
+		/* Сварка */
+		/* **************** */
+		if (mpULMD.checked) {
+			strName += '1';
+			strArt += '1';
+		} else {
+			strName += '0';
+			strArt += '0';
+		}
+		/* **************** */
 	}
+	/* **************** */
 
-	// alert(
-	// 	'Условное обозначение:' + '\n' + strName + '\n' + 'Артикул:' + '\n' + strArt
-	// );
-	strNameRes.value = strName;
-	artNameRes.value = strArt;
+	/* **************** */
+	if (psULMD.checked) {
+		strName += '1';
+		strArt += '1';
+	} else {
+		strName += '0';
+		strArt += '0';
+	}
+	/* **************** */
+
+	strName += '-';
+
+	/* **************** */
+	if (catLMD.value === 'C') {
+		/* Чистка */
+	} else {
+		/* Сварка */
+		strName += 'W';
+		strName += nameFeedLMD.value;
+		strArt += nameFeedLMD.value;
+		strName += '-';
+	}
+	/* **************** */
+
+	strName += 'G';
+	strName += genLMD.value;
+	strArt += genLMD.value;
+
+	nameResLMD.value = strName;
+	artResLMD.value = strArt;
 });
 /***** Вычисление условного обозначения       end*************/
+
 /***** Вычисление диаметра провода по сечению      begin*************/
 const calcWireD = document.getElementById('calcWireD');
 const sqIn = document.getElementById('wireS');
